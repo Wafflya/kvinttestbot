@@ -57,6 +57,7 @@ def recieve_confirmation(update, context):
     elif text == "нет":
         update.message.reply_text("Заказ сброшен")
         context.user_data['state'].clear()
+        start_order(update, context)
     else:
         update.message.reply_text("Подвердите или сбросьте заказ ('Да'/'Нет')")
 
